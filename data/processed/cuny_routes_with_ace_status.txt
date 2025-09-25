@@ -1,0 +1,125 @@
+route_id,route_short_name,route_long_name,serves_campuses,is_ace_enforced
+B1,B1,Bay Ridge - Manhattan Beach,['Kingsborough Community College'],False
+B11,B11,Sunset Park - Midwood,['Brooklyn College'],False
+B25,B25,Dwntn Bklyn & DUMBO - Broadway Junction,['New York City College of Technology'],True
+B26,B26,Downtown Brooklyn - Ridgewood,['New York City College of Technology'],True
+B32,B32,Williamsburg - Long Island City,['School of Law'],False
+B38,B38,Ridgewood - Downtown Brooklyn,['New York City College of Technology'],False
+B41,B41,Kings Plaza - Downtown Brooklyn,['New York City College of Technology'],True
+B43,B43,Greenpoint - Lefferts Gardens,['Medgar Evers College'],False
+B44+,B44-SBS,Sheepshead Bay - Williamsburg,['Medgar Evers College'],False
+B45,B45,Downtown Brooklyn - Crown Heights,['New York City College of Technology'],False
+B48,B48,Lefferts Gardens - Greenpoint,['Medgar Evers College'],False
+B49,B49,Manhattan Beach - Bedford-Stuyvesant,"['Kingsborough Community College', 'Medgar Evers College', 'Brooklyn College']",False
+B52,B52,Downtown Brooklyn - Ridgewood,['New York City College of Technology'],False
+B54,B54,Downtown Brooklyn - Ridgewood,['New York City College of Technology'],False
+B57,B57,Gowanus - Maspeth,['New York City College of Technology'],False
+B6,B6,Bath Beach - East New York,['Brooklyn College'],False
+B61,B61,Park Slope - Downtown Brooklyn,['New York City College of Technology'],False
+B62,B62,Astoria - Downtown Brooklyn,"['New York City College of Technology', 'School of Law']",True
+B65,B65,Downtown Brooklyn - Crown Heights,['New York City College of Technology'],False
+B67,B67,Brooklyn Navy Yard - Kensington,['New York City College of Technology'],False
+B69,B69,Downtown Brooklyn - Kensington,['New York City College of Technology'],False
+BX1,Bx1,Riverdale - Mott Haven,"['Hostos Community College', 'Lehman College']",False
+BX10,Bx10,Riverdale - Norwood,['Lehman College'],False
+BX13,Bx13,George Washington Bridge - Bronx Terminal Market,['Hostos Community College'],False
+BX19,Bx19,NY Botanical Garden - Riverbank Park,['Hostos Community College'],False
+BX2,Bx2,Kingsbridge Heights - Mott Haven,"['Hostos Community College', 'Lehman College']",False
+BX22,Bx22,Bedford Park - Castle Hill,['Lehman College'],False
+BX25,Bx25,Co-op City Bay Plaza - Bedford Park,['Lehman College'],False
+BX26,Bx26,Co-op City Section 5 - Bedford Park,['Lehman College'],False
+BX28,Bx28,Co-op City Section 5 - Fordham Center,['Lehman College'],False
+BX3,Bx3,Riverdale - George Washington Bridge,['Bronx Community College'],False
+BX32,Bx32,Kingsbridge VA Hospital - Mott Haven,"['Bronx Community College', 'Hostos Community College']",False
+BX33,Bx33,Port Morris - Harlem,['The City College of New York'],False
+BX34,Bx34,Woodlawn - Fordham Center,['Lehman College'],False
+BX38,Bx38,Co-op City Bay Plaza - Norwood,['Lehman College'],False
+BX40,Bx40,Throgs Neck - River Park Towers,['Bronx Community College'],False
+BX42,Bx42,Throgs Neck - River Park Towers,['Bronx Community College'],False
+M1,M1,Harlem - East Village,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies', 'School of Public Health', 'Baruch College', 'Hunter College']",False
+M10,M10,Harlem - Columbus Circle,"['Macaulay Honors College', 'The City College of New York', 'John Jay College of Criminal Justice']",False
+M100,M100,Inwood - Harlem,['The City College of New York'],True
+M101,M101,East Village - Fort George,"['The Graduate School and University Center', 'School of Public Health', 'Baruch College', 'The City College of New York', 'Hunter College']",True
+M102,M102,Harlem - East Village,"['The Graduate School and University Center', 'School of Public Health', 'Baruch College', 'Hunter College']",False
+M103,M103,East Harlem - City Hall,"['The Graduate School and University Center', 'Baruch College', 'Hunter College']",False
+M104,M104,West Harlem - Times Square,"['Guttman Community College', 'School of Labor and Urban Studies', 'School of Journalism', 'Macaulay Honors College', 'John Jay College of Criminal Justice']",False
+M11,M11,Riverbank Park & Harlem - West Village,"['School of Journalism', 'Macaulay Honors College', 'The City College of New York', 'John Jay College of Criminal Justice']",False
+M12,M12,Midtown West - West Village,['John Jay College of Criminal Justice'],False
+M125,M125,Manhattanville - The Hub,['School of Public Health'],False
+M15,M15,East Harlem - South Ferry,"['Baruch College', 'Hunter College']",False
+M15+,M15-SBS,East Harlem - South Ferry,"['Baruch College', 'Hunter College']",False
+M2,M2,Washington Heights - East Village,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies', 'School of Public Health', 'Baruch College', 'Hunter College']",True
+M20,M20,Lincoln Center - South Ferry,"['Borough of Manhattan Community College', 'Guttman Community College', 'School of Labor and Urban Studies', 'School of Professional Studies', 'School of Journalism', 'Macaulay Honors College', 'John Jay College of Criminal Justice']",False
+M22,M22,Lower East Side - Battery Park City,['Borough of Manhattan Community College'],False
+M23+,M23-SBS,Chelsea Piers - East Side,['Baruch College'],False
+M3,M3,Fort George - East Village,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies', 'Baruch College', 'The City College of New York', 'Hunter College']",False
+M31,M31,Yorkville - Clinton,['John Jay College of Criminal Justice'],False
+M34+,M34-SBS,East Side - Javits Center,"['Guttman Community College', 'The Graduate School and University Center', 'School of Professional Studies', 'Baruch College']",False
+M34A+,M34A-SBS,Waterside - Port Authority Terminal,"['Guttman Community College', 'The Graduate School and University Center', 'School of Professional Studies', 'School of Journalism', 'Baruch College']",False
+M4,M4,The Cloisters - 32 St,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'The City College of New York', 'Hunter College']",True
+M42,M42,United Nations - W 42 St Pier,"['Guttman Community College', 'School of Journalism']",True
+M5,M5,George Washington Bridge - 31 St & 6 Av,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Macaulay Honors College', 'The City College of New York', 'John Jay College of Criminal Justice']",False
+M50,M50,W 42 St Pier - East Side,['School of Labor and Urban Studies'],False
+M55,M55,W 44 St  - South Ferry,"['Borough of Manhattan Community College', 'Guttman Community College', 'The Graduate School and University Center', 'School of Professional Studies', 'Baruch College']",False
+M57,M57,East Side - West Side,['John Jay College of Criminal Justice'],False
+M60+,M60-SBS,West Side - LaGuardia Airport,['School of Public Health'],False
+M66,M66,East Side - Lincoln Center,"['Macaulay Honors College', 'Hunter College']",False
+M7,M7,Harlem - 14th Street,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies', 'School of Public Health', 'Macaulay Honors College', 'John Jay College of Criminal Justice']",False
+M72,M72,East Side - West Side,"['Macaulay Honors College', 'Hunter College']",False
+M9,M9,Battery Park City - Kips Bay,"['Borough of Manhattan Community College', 'Baruch College']",False
+M98,M98,Washington Heights - Upper East Side LTD,['Hunter College'],False
+Q17,Q17,Flushing - Jamaica,['York College'],False
+Q20,Q20,College Point - Jamaica,"['Queens College', 'York College']",False
+Q27,Q27,Cambria Heights - Flushing,['Queensborough Community College'],False
+Q30,Q30,Little Neck - Jamaica,['York College'],False
+Q31,Q31,Bayside - Jamaica,['York College'],False
+Q39,Q39,Long Island City - Glendale,"['LaGuardia Community College', 'School of Law']",False
+Q4,Q4,Cambria Heights - Jamaica,['York College'],False
+Q42,Q42,Addisleigh Park - Jamaica,['York College'],False
+Q44+,Q44-SBS,Bronx Zoo - Jamaica,['York College'],False
+Q5,Q5,Laurelton - Jamaica,['York College'],True
+Q54,Q54,Williamsburg - Jamaica,['York College'],True
+Q56,Q56,Broadway Junction - Jamaica,['York College'],False
+Q67,Q67,Long Island City - Middle Village,['School of Law'],False
+Q75,Q75,Jamaica - QCC,"['Queensborough Community College', 'York College']",False
+Q83,Q83,Cambria Heights - Jamaica,['York College'],False
+Q84,Q84,Laurelton - Jamaica,['York College'],False
+Q85,Q85,Rosedale - Jamaica,['York College'],False
+Q86,Q86,Rosedale - Jamaica,['York College'],False
+Q87,Q87,Green Acres - Jamaica,['York College'],False
+Q88,Q88,Elmhurst - Queens Village,['Queens College'],False
+Q89,Q89,Green Acres - Jamaica,['York College'],False
+QM63,QM63,Rosedale - Midtown Express,"['Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False
+QM64,QM64,Elmont - Midtown Express,"['Guttman Community College', 'The Graduate School and University Center', 'Baruch College', 'York College']",False
+QM68,QM68,Floral Park - Midtown Express,"['Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False
+S62,S62,St. George - Travis,['College of Staten Island'],False
+S92,S92,St. George - Travis LTD,['College of Staten Island'],False
+S93,S93,College of Staten Island - Bay Ridge LTD,['College of Staten Island'],False
+SIM1,SIM1,Eltingville - Lower Manhattan Express,['Borough of Manhattan Community College'],False
+SIM10,SIM10, Eltingville - Midtown Manhattan Express,"['Guttman Community College', 'Baruch College']",False
+SIM11,SIM11, New Dorp - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM1C,SIM1C,Eltingville - Manhattan Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM2,SIM2,Tottenville - Lower Manhattan Express,['Borough of Manhattan Community College'],False
+SIM22,SIM22, Eltingville - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'School of Journalism']",False
+SIM23,SIM23, Annadale - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies']",False
+SIM24,SIM24, Prince's Bay - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'School of Professional Studies']",False
+SIM25,SIM25, Tottenville - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'School of Journalism']",False
+SIM26,SIM26, Tottenville - Midtown Manhattan Express,"['Guttman Community College', 'School of Journalism']",False
+SIM3,SIM3,Pt. Richmond - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM30,SIM30, Sunnyside - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'School of Journalism']",False
+SIM31,SIM31, Eltingville - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM32,SIM32, Travis - Lower Manhattan Express,"['Borough of Manhattan Community College', 'College of Staten Island']",False
+SIM33,SIM33, Mariners Harbor - Manhattan Express,"['Borough of Manhattan Community College', 'College of Staten Island']",False
+SIM33C,SIM33C, Mariners Harbor - Greenwich Village Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'College of Staten Island', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM34,SIM34, Mariners Harbor - Lower Manhattan Express,['Borough of Manhattan Community College'],False
+SIM3C,SIM3C,Pt. Richmond - Manhattan Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM4,SIM4,Eltingville - Lower Manhattan Express,"['Borough of Manhattan Community College', 'College of Staten Island']",False
+SIM4C,SIM4C,Huguenot - Manhattan Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM6,SIM6,Eltingville - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'The Graduate School and University Center', 'Baruch College']",False
+SIM7,SIM7,Eltingville - Greenwich Village Express,['Borough of Manhattan Community College'],False
+SIM8,SIM8,Huguenot - Midtown Manhattan Express,"['Guttman Community College', 'School of Labor and Urban Studies', 'School of Journalism']",False
+SIM9,SIM9, Eltingville - Greenwich Village Express,['Borough of Manhattan Community College'],False
+X27,X27,Bay Ridge - Manhattan Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False
+X28,X28,Sea Gate / Bensonhurst - Manhattan Express,"['Borough of Manhattan Community College', 'Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False
+X37,X37,Bay Ridge - Midtown Manhattan Express,"['Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False
+X38,X38,Sea Gate / Bensonhurst - Midtown Manhattan Express,"['Guttman Community College', 'The Graduate School and University Center', 'Baruch College']",False

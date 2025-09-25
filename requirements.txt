@@ -1,0 +1,24 @@
+# requirements.txt
+# Hello
+
+# Core data packages
+pandas
+numpy
+
+# Visualization (if you want to output from Python)
+matplotlib
+seaborn
+plotly
+
+# Jupyter + notebook support
+notebook
+jupyterlab
+ipykernel
+
+# Environment variable management (for API keys, etc.)
+python-dotenv
+# Google Generative AI SDK
+google-genai
+
+# Optional: Observable-style interop tools
+pyodide-http  # for Observable web interop if needed

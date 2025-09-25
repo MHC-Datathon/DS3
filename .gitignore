@@ -1,0 +1,17 @@
+.venv/
+# Ignore everything inside data/
+data/*
+
+# But keep all subdirectories
+!data/*/
+
+data/raw/*.csv
+data/processed/*.csv
+
+!data/raw/CUNY_Campuses.csv
+
+
+data/raw/gtfs*
+data/processed/gtfs*
+
+.env

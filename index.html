@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Performance Analysis: 2024-2025 Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1e3a5f;
+            background-image: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            position: relative;
+        }
+
+        /* Subway tile pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, rgba(255,255,255,0.02) 2px, transparent 2px),
+                linear-gradient(rgba(255,255,255,0.02) 2px, transparent 2px);
+            background-size: 120px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .analysis-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* MTA Station Sign Header */
+        .mta-header {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 4px solid #ffffff;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .mta-header::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 2px solid #ffffff;
+        }
+
+        .question-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 900;
+            text-align: center;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .section {
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
+            margin-bottom: 48px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 16px;
+        }
+
+        .section-number {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #b0c4de;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            color: #b0c4de;
+            text-align: center;
+        }
+
+        .limitation-badge {
+            background: #ffffff;
+            color: #1e3a5f;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 16px rgba(255,255,255,0.2);
+        }
+
+        /* NEW: Container to center the dataset badges */
+        .datasets-container {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 48px 0;
+        }
+
+        .year-column {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a1a;
+            border: 3px solid #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .year-header {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.01em;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .year-content {
+            padding: 40px;
+        }
+
+        .metric-display {
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .metric-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #1e3a5f;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .image-placeholder {
+            border: 3px solid #1e3a5f;
+            background: rgba(255,255,255,0.8);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 32px 0;
+            position: relative;
+            color: #1e3a5f;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed #1e3a5f;
+            opacity: 0.3;
+        }
+
+        .image-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .image-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            border: 3px solid #1e3a5f;
+            background: rgba(255,255,255,0.9);
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(30,58,95,0.1);
+        }
+
+        .stat-card-green {
+            border: 3px solid #1e3a5f;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(30,58,95,0.1);
+        }
+
+        .stat-card-red {
+            border: 3px solid #1e3a5f;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(30,58,95,0.1);
+        }
+
+        .highlight-number {
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .highlight-box {
+            background: #1a1a1a;
+            color: white;
+            padding: 32px;
+            margin: 48px 0;
+            position: relative;
+            border: 3px solid #ffffff;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .highlight-box h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 0;
+            font-weight: 700;
+        }
+
+        .key-insight {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a1a;
+            border: 4px solid #ffffff;
+            padding: 32px;
+            margin: 48px 0;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(255,255,255,0.2);
+        }
+
+        .key-insight::before {
+            content: "KEY INSIGHT";
+            position: absolute;
+            top: -16px;
+            left: 24px;
+            background: #1e3a5f;
+            color: white;
+            padding: 8px 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            border: 2px solid #ffffff;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: rgba(255,255,255,0.95);
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .data-table th {
+            background: #1e3a5f;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .data-table td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(30,58,95,0.1);
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .improvement {
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .decline {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        .routes-display {
+            background: rgba(255,255,255,0.9);
+            border: 3px solid #1e3a5f;
+            padding: 20px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0;
+            color: #1e3a5f;
+            box-shadow: 0 4px 16px rgba(30,58,95,0.1);
+        }
+
+        .recommendation-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px;
+            margin: 80px 0;
+            position: relative;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .recommendation-section h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 32px;
+            color: white;
+        }
+
+        .recommendation-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .correlation-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: #1e3a5f;
+            margin: 24px 0;
+            border: 3px solid #1e3a5f;
+        }
+
+        .correlation-cell {
+            background: rgba(255,255,255,0.95);
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .correlation-header {
+            background: #1e3a5f !important;
+            color: white !important;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .event-case-study {
+            background: rgba(255,255,255,0.95);
+            color: #1a1a1a;
+            border: 3px solid #ffffff;
+            padding: 40px;
+            margin: 32px 0;
+            box-shadow: 0 8px 32px rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .analysis-container {
+                padding: 40px 20px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .question-title {
+                font-size: clamp(1.2rem, 6vw, 2rem);
+            }
+
+            .section-title {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            .year-content {
+                padding: 24px;
+            }
+
+            .metric-value {
+                font-size: 3rem;
+            }
+
+            .recommendation-section {
+                padding: 40px 24px;
+            }
+
+            /* Mobile adjustment for dataset badges */
+            .datasets-container .limitation-badge {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="analysis-container">
+        
+        <!-- SECTION 1: Street Events and Exempt Violations -->
+        <div class="section">
+            <div class="mta-header">
+                <div class="question-title">Do permitted street events in Manhattan's CBD lead to more exempt violations, and are certain vehicles disproportionately responsible?</div>
+            </div>
+            
+            <p class="section-description">Violations (like double-parking) block bus lanes and reduce transit reliability — a big concern for the MTA and city planners.</p>
+
+            <!-- NEW SECTION 01: General Overview -->
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h3 class="section-title">General Overview of ACE Violations Dataset</h3>
+            </div>
+
+            <!-- MOVED SECTION: Dataset badges and content placed below the header -->
+            <div class="limitation-badge">
+                Dataset Used: MTA Bus Automated Camera Enforcement Violations: January 1st - December 31st 2024
+            </div>
+            <div class="limitation-badge">
+                Dataset Used: NYC Permitted Event Information: January 1st - December 31st 2024
+            </div>
+
+            <p class="section-description" style="text-align: left;">What are the patterns of exempt violations across different times of day or week?</p>
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">Time of Day Patterns</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_1.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <p style="font-weight: 600; margin: 24px 0;">Exempt violations follow a <strong>bimodal pattern</strong>, peaking around <span>7 AM</span> and <span>2 PM</span>.</p>
+                        <p style="margin: 16px 0;">The early morning spike likely reflects buses navigating congested streets during commuter rush hours, while the afternoon peak may align with school dismissals, shift changes, and increased delivery activity.</p>
+                        <p style="margin: 16px 0; font-weight: 600;">These time-specific surges highlight potential pressure points for traffic enforcement and service reliability within the CBD.</p>
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">Day of Week Patterns</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_2.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <div class="stat-grid">
+                            <div class="stat-card-red">
+                                <div class="stat-number">~13,000</div>
+                                <div class="stat-label">Weekday Violations</div>
+                            </div>
+                            <div class="stat-card-green">
+                                <div class="stat-number">~5,000</div>
+                                <div class="stat-label">Weekend Violations</div>
+                            </div>
+                        </div>
+
+                        <p style="margin: 16px 0;">Most exempt violations occur on <strong>weekdays</strong>, totaling around 13,000 compared to about 5,000 on weekends.</p>
+                        <p style="margin: 16px 0; font-weight: 600;">This weekday concentration reflects heavier bus and commercial activity in the CBD during standard work hours, suggesting that traffic management challenges are closely tied to weekday commuting and delivery patterns rather than weekend events.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEW SECTION 02: Statistical Tests -->
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h3 class="section-title">Statistical Analysis of ACE Dataset</h3>
+            </div>
+
+            <p class="section-description" style="text-align: left;">Some vehicles stopped in violation are exempt from fines due to business reasons. Do exempt vehicles and non-exempt vehicles have different patterns in their violation counts?</p>
+
+            <div class="highlight-box">
+                <h4>Mann-Whitney U Test</h4>
+                <p><strong>Null Hypothesis (H₀):</strong> The distributions of exempt and non-exempt violation counts are the same.</p>
+                <p><strong>Alternative Hypothesis (H₁):</strong> The distributions of exempt and non-exempt violation counts are different.</p>
+                
+                <div style="margin: 24px 0;">
+                    <p><strong>Results:</strong></p>
+                    <ul style="margin: 16px 0; padding-left: 20px;">
+                        <li>Test Statistic: 697,899,458.0</li>
+                        <li>p-value: < 0.001</li>
+                    </ul>
+                </div>
+
+                <p><strong>Conclusion:</strong> Reject H₀ → Exempt vehicles' violation patterns are statistically different from those of non-exempt vehicles.</p>
+            </div>
+
+            <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_3.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+
+            <!-- NEW SECTION 03: Repeat Offenders and Location Analysis 
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h3 class="section-title">General Overview of ACE Violations Dataset (Statistical Tests)</h3>
+            </div>
+            -->
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">For vehicles that are exempt for business reasons, are there repeat offenders?</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_4.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <div class="stat-grid">
+                            <div class="stat-card-red">
+                                <div class="stat-number">~40%</div>
+                                <div class="stat-label">Exempt Repeat Offenders</div>
+                            </div>
+                            <div class="stat-card-green">
+                                <div class="stat-number">~21%</div>
+                                <div class="stat-label">Non-Exempt Repeat Offenders</div>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h4>Mann–Whitney U Test with Cliff's Delta Effect Size</h4>
+                            <p>Exempt vehicles have a statistically higher rate of repeat violations than non-exempt vehicles (p < 0.001).</p>
+                            <p>The effect size is small-to-moderate (Cliff's Delta = 0.22), indicating that exempt vehicles are somewhat more likely to repeatedly offend, though the difference is not dramatic.</p>
+                            <p><strong>Conclusion:</strong> This indicates that enforcement should focus on repeat offenders among exempt vehicles, while the moderate difference suggests that wide-scale policy changes may not be required.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">Where are exempt vehicles frequently in violation?</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_5.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <div class="highlight-box">
+                            <h4>Chi-Square Test of Violation Types by Stop</h4>
+                            <p><strong>Null Hypothesis (H₀):</strong> Violation types are randomly distributed across stops.</p>
+                            <p><strong>Alternative Hypothesis (H₁):</strong> Some stop/violation-type combinations occur more frequently than expected by chance.</p>
+                            
+                            <div style="margin: 24px 0;">
+                                <p><strong>Results:</strong></p>
+                                <ul style="margin: 16px 0; padding-left: 20px;">
+                                    <li>Chi-square statistic: 59,906.15</li>
+                                    <li>p-value: < 0.001</li>
+                                </ul>
+                            </div>
+
+                            <p><strong>Conclusion:</strong> We reject H₀. Exempt violations are concentrated at specific stops and for certain violation types. This suggests that enforcement resources and fleet management strategies could be optimized by focusing on high-risk stops and common violation types, improving efficiency and reducing repeat offenses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ORIGINAL SECTION NOW BECOMES 03 -->
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h3 class="section-title">Assessing the Impact of Street Events on Exempt Violations</h3>
+            </div>
+
+            <div class="key-insight">
+                <strong>Events in general don't increase violations:</strong>
+                <ul style="margin: 16px 0; padding-left: 20px;">
+                    <li style="margin: 8px 0;">On average, there are slightly fewer exempt violations during events compared to nearby non-event days (Δ = <span class="decline">-0.10</span>)</li>
+                    <li style="margin: 8px 0;">Most permitted events (block parties, film shoots, athletic races, etc.) don't disrupt traffic enough to trigger widespread exempt violations.</li>
+                </ul>
+            </div>
+
+            <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_6.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+
+            <p class="section-description" style="text-align: left;">What matters is the event type…</p>
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">Exempt Violations during Events<br>(Full Street Closure + Curb Lane Closure)<br>→ 689 events (1-day, 2024)</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_7.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <div class="stat-grid">
+                            <div class="stat-card-green">
+                                <div class="stat-number">1.60</div>
+                                <div class="stat-label">Mean Exempt Violations per Event</div>
+                            </div>
+                            <div class="stat-card-green">
+                                <div class="stat-number">0.20</div>
+                                <div class="stat-label">Mean Exempt Repeat Offenders</div>
+                            </div>
+                        </div>
+
+                        <p style="font-weight: 600; margin: 24px 0;">Full closures produce <span class="decline">4×</span> more violations per event and account for <span class="decline">~44%</span> of all violations, despite being just <span class="decline">~10%</span> of events.</p>
+                        <p style="font-weight: 600; margin: 24px 0;">The type of event matters — full closures are the primary driver of double-parking behavior.</p>
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">Exempt Violations during Events<br>(Full Street Closure)<br>→ 70 events (1-day, 2024)</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/7895d17f709f119671ce0a70dbf532354617abd8/assets/images/violations_events/image_8.png" 
+     alt="Violations events visualization" 
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        
+                        <div class="stat-grid">
+                            <div class="stat-card-red">
+                                <div class="stat-number">6.96</div>
+                                <div class="stat-label">Mean Exempt Violations per Event</div>
+                            </div>
+                            <div class="stat-card-red">
+                                <div class="stat-number">1.0</div>
+                                <div class="stat-label">Mean Exempt Repeat Offenders</div>
+                            </div>
+                        </div>
+
+                        <p style="font-weight: 600; margin: 24px 0;">Repeat violators are <span class="decline">5×</span> more common during full closures.</p>
+                        <p style="font-weight: 600; margin: 24px 0;">This suggests that a small group of vehicles disproportionately drive the problem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1 Recommendations -->
+        <div class="recommendation-section">
+            <h3 style="text-align: center;">Recommendations</h3>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 32px;">Implement coordination between DOT & NYPD to adjust bus routes or add temporary loading zones near full closures, reducing double-parking hotspots and improving bus performance in the CBD.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Congestion Pricing Impact -->
+        <div class="section">
+            <div class="mta-header">
+                <div class="question-title">How have violations and bus performance of routes changed alongside the implementation of congestion pricing?</div>
+            </div>
+
+            <!-- Bus Speed Performance Section -->
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Bus Speed Performance</h2>
+            </div>
+            
+            <div class="limitation-badge">
+                Dataset Period: January 5 - August 20 | Focus: Central Business District Routes
+            </div>
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">2024</div>
+                    <div class="year-content">
+                        <div class="metric-display">
+                            <div class="metric-value">7.64</div>
+                            <div class="metric-label">Average Speed (mph)</div>
+                        </div>
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/24/kepler.gl%20(1).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">2025</div>
+                    <div class="year-content">
+                        <div class="metric-display">
+                            <div class="metric-value">7.76</div>
+                            <div class="metric-label">Average Speed (mph)</div>
+                        </div>
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/25/kepler.gl%20(1).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                <strong>Key Finding:</strong> <span class="improvement">+0.12 mph improvement</span> in average speed from 2024 to 2025, attributed to reduced congestion in key CBD areas.
+            </div>
+
+            <!-- ACE Violations Analysis -->
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">ACE Violations</h2>
+            </div>
+
+            <div class="limitation-badge">
+                ACE Routes Analysis: June 20 - August 20 | 3 Routes Examined
+            </div>
+
+            <div class="routes-display">
+                Routes Analyzed: M34+, M15+, M23+
+            </div>
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">2024</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/24/kepler.gl%20vio%20(1).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">9,983</div>
+                                <div class="stat-label">Total Violations Mean</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">6,014</div>
+                                <div class="stat-label">Unique Vehicles Mean</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">17,160</div>
+                                <div class="stat-label">First-Time Offenders</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">14,433</div>
+                                <div class="stat-label">Repeat Offenders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">2025</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/25/kepler.gl%20vio%20(2).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">9,871</div>
+                                <div class="stat-label">Total Violations Mean</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">5,985</div>
+                                <div class="stat-label">Unique Vehicles Mean</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">16,028</div>
+                                <div class="stat-label">First-Time Offenders</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">12,852</div>
+                                <div class="stat-label">Repeat Offenders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                <strong>Improvement Observed:</strong> <span class="improvement">Reduction in both total violations and repeat offenders</span> indicating better traffic compliance in 2025.
+            </div>
+
+            <!-- Wait Assessment Analysis -->
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Bus Wait Performance</h2>
+            </div>
+
+            <div class="limitation-badge">
+                Wait Assessment: % of buses arriving on schedule | Period: January 5 - August 20
+            </div>
+
+            <div class="comparison-grid">
+                <div class="year-column">
+                    <div class="year-header">2024</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/24/kepler.gl%20wait%20(1).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+
+                        <h4 style="margin: 32px 0 16px 0; font-weight: 700;">Correlation Matrix</h4>
+                        <div class="correlation-grid">
+                            <div class="correlation-cell correlation-header"></div>
+                            <div class="correlation-cell correlation-header">Total Violations</div>
+                            <div class="correlation-cell correlation-header">Unique Violations</div>
+                            <div class="correlation-cell correlation-header">Wait Assessment</div>
+                            <div class="correlation-cell correlation-header">Total Violations</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell"><span class="decline">-0.798</span></div>
+                            <div class="correlation-cell correlation-header">Unique Violations</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell"><span class="decline">-0.796</span></div>
+                            <div class="correlation-cell correlation-header">Wait Assessment</div>
+                            <div class="correlation-cell"><span class="decline">-0.798</span></div>
+                            <div class="correlation-cell"><span class="decline">-0.796</span></div>
+                            <div class="correlation-cell">1.000</div>
+                        </div>
+
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">75.9%</div>
+                                <div class="stat-label">Routes w/ Violations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">68.0%</div>
+                                <div class="stat-label">Routes w/o Violations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">13</div>
+                                <div class="stat-label">Poor Performing Routes</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">26</div>
+                                <div class="stat-label">Worse During Peak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-column">
+                    <div class="year-header">2025</div>
+                    <div class="year-content">
+                        <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/25/kepler.gl%20wait%20(2).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+
+                        <h4 style="margin: 32px 0 16px 0; font-weight: 700;">Correlation Matrix</h4>
+                        <div class="correlation-grid">
+                            <div class="correlation-cell correlation-header"></div>
+                            <div class="correlation-cell correlation-header">Total Violations</div>
+                            <div class="correlation-cell correlation-header">Unique Violations</div>
+                            <div class="correlation-cell correlation-header">Wait Assessment</div>
+                            <div class="correlation-cell correlation-header">Total Violations</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell"><span class="decline">-0.560</span></div>
+                            <div class="correlation-cell correlation-header">Unique Violations</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell">1.000</div>
+                            <div class="correlation-cell"><span class="decline">-0.562</span></div>
+                            <div class="correlation-cell correlation-header">Wait Assessment</div>
+                            <div class="correlation-cell"><span class="decline">-0.560</span></div>
+                            <div class="correlation-cell"><span class="decline">-0.562</span></div>
+                            <div class="correlation-cell">1.000</div>
+                        </div>
+
+                        <div class="stat-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">80.6%</div>
+                                <div class="stat-label">Routes w/ Violations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">72.2%</div>
+                                <div class="stat-label">Routes w/o Violations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">9</div>
+                                <div class="stat-label">Poor Performing Routes</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">26</div>
+                                <div class="stat-label">Worse During Peak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-insight">
+                <strong>Significant 2025 Improvements:</strong> <span class="improvement">Weaker violation-performance correlation</span>, <span class="improvement">better wait assessments</span>, and <span class="improvement">fewer poor-performing routes</span> (9 vs 13).
+            </div>
+
+            <!-- Events Impact Analysis -->
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Event Impacts</h2>
+            </div>
+
+            <p style="font-size: 1.1rem; margin-bottom: 48px;">Analysis of consistent events across both years, measuring impact against baseline conditions from the month prior to each event. The previous month is a month that had no events that had street closure in it.</p>
+
+            <div class="event-case-study">
+                <h4 style="font-size: 1.4rem; margin-top: 0; font-weight: 700;">Case Study: Chanel Artists Awards Dinner</h4>
+                <p><strong>Location:</strong> Thomas Street between West Broadway and Church Street</p>
+                <p><strong>Affected Routes:</strong> M55, M20</p>
+                
+                <div class="comparison-grid">
+                    <div class="year-column">
+                        <div class="year-header">2024 Impact</div>
+                        <div class="year-content">
+                            <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/24/kepler.gl%20loc%20(1).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                            <div class="stat-card">
+                                <div class="stat-label decline">Higher impact on bus speeds</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="year-column">
+                        <div class="year-header">2025 Impact</div>
+                        <div class="year-content">
+                            <img src="https://raw.githubusercontent.com/DereckTav/datathon/main/25/kepler.gl%20loc%20(2).png" 
+     alt="Kepler map visualization"
+     style="width: 100%; height: auto; border: 3px solid #1e3a5f; margin: 32px 0;">
+                            <div class="stat-card">
+                                <div class="stat-label improvement">Lower impact on bus speeds</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>High-Impact Event Example (2024)</h4>
+                <p><strong>Location:</strong> West 56th Street between 9th Avenue and 10th Avenue</p>
+                <p><strong>Affected Routes:</strong> M31, M11, M12, M57</p>
+                
+                <table class="data-table">
+                    <tr>
+                        <th>Route</th>
+                        <th>Baseline (mph)</th>
+                        <th>Event (mph)</th>
+                        <th>Change (%)</th>
+                        <th>Impact</th>
+                    </tr>
+                    <tr>
+                        <td>M12</td>
+                        <td>6.16</td>
+                        <td>6.67</td>
+                        <td><span class="decline">-7.64%</span></td>
+                        <td>HIGH</td>
+                    </tr>
+                    <tr>
+                        <td>M11</td>
+                        <td>6.23</td>
+                        <td>6.50</td>
+                        <td><span class="decline">-4.15%</span></td>
+                        <td>MEDIUM</td>
+                    </tr>
+                    <tr>
+                        <td>M57</td>
+                        <td>4.86</td>
+                        <td>4.94</td>
+                        <td><span class="decline">-1.55%</span></td>
+                        <td>LOW</td>
+                    </tr>
+                    <tr>
+                        <td>M31</td>
+                        <td>5.18</td>
+                        <td>5.22</td>
+                        <td><span class="decline">-0.88%</span></td>
+                        <td>LOW</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Positive Impact Event Example (2024)</h4>
+                <p><strong>Location:</strong> West 30th Street between 7th Avenue and Avenue of the Americas</p>
+                <p><strong>Affected Routes:</strong> M20, M7</p>
+                
+                <table class="data-table">
+                    <tr>
+                        <th>Route</th>
+                        <th>Baseline (mph)</th>
+                        <th>Event (mph)</th>
+                        <th>Change (%)</th>
+                        <th>Impact</th>
+                    </tr>
+                    <tr>
+                        <td>M20</td>
+                        <td>6.02</td>
+                        <td>6.10</td>
+                        <td><span class="improvement">+1.27%</span></td>
+                        <td>LOW</td>
+                    </tr>
+                    <tr>
+                        <td>M7</td>
+                        <td>7.02</td>
+                        <td>7.01</td>
+                        <td><span class="decline">-0.21%</span></td>
+                        <td>LOW</td>
+                    </tr>
+                </table>
+                <p><em>Not all street events negatively impact bus performance. Strategic event placement can improve traffic flow.</em></p>
+            </div>
+        </div>
+
+        <!-- Section 2 Recommendations -->
+        <div class="recommendation-section">
+            <h3 style="text-align: center;">Recommendations</h3>
+            <div style="text-align: center;">
+                <p style="margin-bottom: 32px;">Develop a system to monitor the impacts of events using bus performance and street closure permits, to better decide where to allow street events that close one or more streets, promoting improved bus performance in Manhattan's Central Business District.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
